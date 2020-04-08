@@ -1,0 +1,16 @@
+邮箱截图插件
+TXGYMailCamera.dll(X86)
+Export:
+CameraWindow
+CameraSubArea
+CameraWindowLikeSpy
+调用参数：
+rundll32 TXGYMailCamera.dll CameraWindow
+
+
+微信截图插件
+PrScrn.dll(X86)
+Export:
+PrScrn
+调用参数：
+rundll32 PrScrn.dll PrScrn

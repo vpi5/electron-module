@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>electron</title>
+    <style>
+        .divBtn{
+            width: 85px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: #961cff;
+            border: 1px solid #1fffa7;
+        }
+    </style>
+</head>
+<body>
+    Lorem ipsum dolor.
+    <h2 onclick="openScreenShot()">截图</h2>
+
+
+    <div class="divBtn" onclick="winMinAndRestore()">最小化</div>
+    <div class="divBtn" onclick="windowSizeSwitch()">toggle</div>
+    <div class="divBtn" onclick="maxWindowSize()">最大化</div>
+    <div class="divBtn" onclick="closeWin()">关  闭</div>
+</body>
+</html>
+<script>
+    console.log(`当前操作系统为：${getPlatform()}`)
+</script>

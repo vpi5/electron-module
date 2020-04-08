@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "umi build"
+  },
+  "dependencies": {
+    "electron": "6.1.7",
+    "electron-connect": "^0.6.3",
+    "gulp": "^4.0.2"
+  }
+}
