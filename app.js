@@ -17,6 +17,7 @@ function createWindow () {
         },
         show:false,
     });
+    win.maximize();
 
     // js api 方法 注入
     win.webContents.on('did-finish-load', () => {

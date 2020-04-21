@@ -1,13 +1,42 @@
 {
+  "name": "electrop-exe",
+  "version": "2.0.0",
+  "description": "myApp",
   "private": true,
   "main": "app.js",
   "scripts": {
     "start": "electron .",
-    "build": "umi build"
+    "buildMac": "CSC_NAME=\"开发者钥匙串\" electron-builder && bash build/resignAndPackage.sh",
+    "buildWin": "electron-packager . 软件的名字 --platform=win32 --arch=x64 --electron-version=5.0.13 --icon=ico/ico.ico"
+  },
+  "build": {
+    "buildVersion":"20200306",
+    "productName": "软件的名字",
+    "appId": "Mac打包时的 appId",
+    "mac": {
+      "icon" : "ico/ico.icns",
+      "target": [
+        "mas"
+      ],
+      "provisioningProfile": "plist/appid对应的钥匙.provisionprofile",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "plist/entitlements.mac.plist"
+    },
+    "mas": {
+      "icon" : "ico/ico.icns",
+      "hardenedRuntime": false,
+      "provisioningProfile": "plist/appid对应的钥匙.provisionprofile",
+      "entitlements": "plist/entitlements.mas.plist",
+      "entitlementsInherit": "plist/entitlements.mas.inherit.plist",
+      "gatekeeperAssess": false
+    }
   },
   "dependencies": {
-    "electron": "6.1.7",
-    "electron-connect": "^0.6.3",
-    "gulp": "^4.0.2"
+    "electron-packager": "^13.1.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^21.2.0",
+    "electron": "5.0.13"
   }
 }
