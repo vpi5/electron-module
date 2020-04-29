@@ -24,7 +24,7 @@
     <true/>
     <key>com.apple.security.application-groups</key>
     <array>
-      <string>742TMEM5YU.com.ghzq.macApplication</string>
+      <string>appID 钥匙串</string>
     </array>
 </dict>
 </plist>
