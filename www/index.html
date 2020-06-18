@@ -26,5 +26,19 @@
 </body>
 </html>
 <script>
-    console.log(`当前操作系统为：${getPlatform()}`)
+    let $ = require('jquery');
+    let {ipcRenderer} = require('electron');
+    ipcRenderer.on('ipc-Message', function(event, arg) {
+        $.ajax({
+            type: "GET",
+            url: `http://127.0.0.1:${arg}/test/test`,
+            data: {},
+            success: function (res) {
+                console.log(res, 'aaaaaaa')
+            },
+            error : function (err) {
+                console.log(err, 'err')
+            }
+        })
+    });
 </script>

@@ -10,11 +10,11 @@
     "buildWin": "electron-packager . 软件的名字 --platform=win32 --arch=x64 --electron-version=5.0.13 --icon=ico/ico.ico"
   },
   "build": {
-    "buildVersion":"20200306",
+    "buildVersion": "20200306",
     "productName": "软件的名字",
     "appId": "Mac打包时的 appId",
     "mac": {
-      "icon" : "ico/ico.icns",
+      "icon": "ico/ico.icns",
       "target": [
         "mas"
       ],
@@ -24,7 +24,7 @@
       "entitlements": "plist/entitlements.mac.plist"
     },
     "mas": {
-      "icon" : "ico/ico.icns",
+      "icon": "ico/ico.icns",
       "hardenedRuntime": false,
       "provisioningProfile": "plist/appid对应的钥匙.provisionprofile",
       "entitlements": "plist/entitlements.mas.plist",
@@ -33,10 +33,19 @@
     }
   },
   "dependencies": {
-    "electron-packager": "^13.1.1"
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "electron-packager": "^13.1.1",
+    "express": "^4.17.1",
+    "getport": "^0.1.0",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
-    "electron-builder": "^21.2.0",
-    "electron": "5.0.13"
+    "electron": "5.0.13",
+    "electron-builder": "^21.2.0"
   }
 }

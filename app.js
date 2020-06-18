@@ -20,7 +20,7 @@ function createWindow () {
     win.maximize();
 
     // js api 方法 注入
-    win.webContents.on('did-finish-load', () => {
+    win.webContents.on('did-finish-load', async () => {
         win.show() ;
         let webContents = win.webContents;
         let jsArr = myHelper.injectJS();
@@ -28,6 +28,8 @@ function createWindow () {
             let jsString = jsArr[i];
             webContents.executeJavaScript(jsString);
         }
+        let startServer = require('./server');
+        win.webContents.send('ipc-Message', await startServer())
     });
 
     // 并且为你的应用加载index.html
